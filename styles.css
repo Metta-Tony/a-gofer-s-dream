@@ -1,0 +1,608 @@
+/* styles.css mobile-first responsive layout for the 4-page golf event site */
+:root {
+    --brand: #0b6b3f;
+    --accent: #f4b400;
+    --muted: #666;
+    --max-width: 1100px
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+    margin: 0;
+    color: #222;
+    line-height: 1.45
+}
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto
+}
+
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0
+}
+
+.brand {
+    font-weight: 700;
+    color: var(--brand);
+    text-decoration: none
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem
+}
+
+.nav-list a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    color: #222;
+    text-decoration: none
+}
+
+.nav-list a:hover {
+    background: #f5f5f5;
+    border-radius: 4px
+}
+
+/* Small screen nav: keep items on one line and smaller for compact header */
+@media (max-width: 600px) {
+    .nav-inner { padding: 0.35rem 0; align-items: center; }
+    .brand { font-size: 1rem; }
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 0.35rem;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .nav-list li { flex: none; }
+    .nav-list a { font-size: 0.88rem; padding: 0.25rem 0.45rem; }
+    .site-header { padding: 0 0; }
+}
+
+.hero {
+    background-image: linear-gradient(rgba(3, 34, 16, 0.45), rgba(3, 34, 16, 0.35)), url('images/download\ \(2\).jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 3.5rem 0
+}
+
+.hero-inner {
+    max-width: 900px
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+    margin: .2rem 0
+}
+
+.hero-sub {
+    opacity: 0.95
+}
+
+.hero-ctas {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center
+}
+
+.hero-ctas .btn {
+    white-space: nowrap
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    color: #fff;
+    text-decoration: none
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #111;
+    border-color: var(--accent)
+}
+
+.small-note {
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    opacity: 0.95
+}
+
+.overview {
+    padding: 1.5rem 0
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin-top: 1rem
+}
+
+.card {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px
+}
+
+.charity-teaser {
+    padding: 1.5rem 0
+}
+
+.sponsors {
+    padding: 1.5rem 0
+}
+
+/* Testimonials and featured golfer quote styles */
+.testimonials {
+    padding: 1.5rem 0;
+}
+
+.featured-golfer-quotes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.quote-card {
+    background: linear-gradient(180deg, #ffffff, #fbfdff);
+    border: 1px solid rgba(11,107,63,0.08);
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(8,12,16,0.04);
+}
+
+.quote-author {
+    font-weight: 700;
+    color: var(--brand);
+    margin: 0 0 0.25rem 0;
+}
+
+.quote-body {
+    margin: 0;
+    font-style: italic;
+    color: #233;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.testimonial {
+    border-left: 4px solid var(--accent);
+    background: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(8,12,16,0.04);
+}
+
+.testimonial blockquote {
+    margin: 0.4rem 0 0 0;
+    color: #333;
+    font-style: normal;
+}
+
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem
+}
+
+.sponsor {
+    background: #f7f7f7;
+    padding: 1rem;
+    border: 1px dashed #ddd;
+    text-align: center;
+    border-radius: 6px
+}
+
+.image-placeholder {
+    background: #eee;
+    border: 1px solid #ddd;
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    border-radius: 6px
+}
+
+.sponsorship-offer {
+    padding: 1.5rem 0
+}
+
+.sponsorship-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: start
+}
+
+.sponsor-card {
+    background: #fff;
+    padding: 1.2rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(8, 12, 16, 0.06);
+    position: relative;
+    overflow: visible;
+    transition: transform 180ms ease, box-shadow 180ms ease
+}
+
+.sponsor-card h3 {
+    margin: 0 0 0.4rem 0
+}
+
+.sponsor-card .price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--brand);
+    margin: 0.2rem 0
+}
+
+.sponsor-card ul {
+    margin: 0.6rem 0 1rem 1.1rem;
+    color: var(--muted)
+}
+
+.sponsor-card .btn {
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 0.9rem
+}
+
+/* small decorative top accent bar */
+.sponsor-card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.sponsor-card .price-badge{
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: #fff;
+    color: var(--brand);
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    box-shadow: 0 6px 16px rgba(8,12,16,0.08);
+}
+
+.sponsor-card .level-icon{
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.sponsor-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(8,12,16,0.12)
+}
+
+/* level-specific gradients for the top accent bar */
+.sponsor-card.bronze::before{ background: linear-gradient(90deg,#b08b57,#d6a86b); }
+.sponsor-card.silver::before{ background: linear-gradient(90deg,#cfcfcf,#ededed); }
+.sponsor-card.gold::before{ background: linear-gradient(90deg,#d4af37,#ffd54a); }
+.sponsor-card.diamond::before{ background: linear-gradient(90deg,#7dd3fc,#b9f2ff); }
+
+.sponsor-card.bronze {
+    border-top: 4px solid #b08b57
+}
+
+.sponsor-card.silver {
+    border-top: 4px solid #c0c0c0
+}
+
+.sponsor-card.gold {
+    border-top: 4px solid #d4af37
+}
+
+.sponsor-card.diamond {
+    border-top: 4px solid #b9f2ff
+}
+
+.sponsor-card .roi {
+    margin: 0.25rem 0 0.6rem;
+    color: #0b662f;
+    font-weight: 600
+}
+
+.sponsorship-disclaimer {
+    font-size: 0.9rem;
+    color: #7a3b3b;
+    background: #fff6f6;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #f2dada;
+    margin-top: 0.8rem
+}
+
+/* donation form */
+.donation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 720px
+}
+
+.donation-form input[type="text"],
+.donation-form input[type="email"],
+.donation-form input[type="tel"],
+.donation-form input[type="number"],
+.donation-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px
+}
+
+.donation-form fieldset {
+    border: 1px solid #eee;
+    padding: 0.6rem;
+    border-radius: 6px
+}
+
+.donation-form label {
+    font-weight: 600
+}
+
+.donation-form legend {
+    font-weight: 700
+}
+
+.donation-form .muted {
+    margin: 0
+}
+
+.site-footer {
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    padding: 1rem 0;
+    margin-top: 2rem
+}
+
+.site-footer a {
+    color: var(--brand)
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.5rem
+}
+
+.odds {
+    background: #f4f4f4;
+    padding: 0.8rem;
+    border-radius: 6px
+}
+
+.responsible {
+    background: #fffbe6;
+    border: 1px solid #fff1c2;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem
+}
+
+/* bigger screens */
+@media(min-width:768px) {
+    .hero h1 {
+        font-size: 2.4rem
+    }
+
+    .hero-ctas {
+        flex-direction: row
+    }
+
+    .nav-list {
+        gap: 1rem
+    }
+
+    .highlights {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .sponsor-grid {
+        grid-template-columns: repeat(4, 1fr)
+    }
+
+    .sponsorship-grid {
+        grid-template-columns: repeat(4, 1fr)
+    }
+
+    .featured-golfer-quotes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width:1100px) {
+    .hero {
+        padding: 5rem 0
+    }
+
+    /* On very large screens, arrange fan/sponsor comments horizontally in three columns */
+    .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* accessibility helpers */
+a:focus {
+    outline: 3px solid #ffd54a;
+    outline-offset: 2px
+}
+
+/* Betting tables and odds styling */
+.table-wrap {
+    overflow-x: auto;
+    margin: 0.6rem 0
+}
+
+.odds-table,
+.caps-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff
+}
+
+.odds-table thead th,
+.caps-table thead th {
+    background: #f6f8f6;
+    padding: 0.6rem;
+    text-align: left;
+    border-bottom: 2px solid #eee
+}
+
+.odds-table td,
+.caps-table td {
+    padding: 0.6rem;
+    border-bottom: 1px solid #f2f2f2
+}
+
+.odds-table tbody tr.highlight td {
+    background: #fff7e6
+}
+
+.odds-table tbody tr:nth-child(even) td {
+    background: #fbfbfb
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 0.95rem
+}
+
+.email-sample {
+    background: #f7f7f9;
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #eee
+}
+
+.disclaimer-box {
+    background: #fff4f4;
+    border-left: 4px solid #ffb3b3;
+    padding: 0.8rem;
+    border-radius: 4px
+}
+
+/* Printable odds board specific tweaks */
+@media print {
+    body {
+        color: #000;
+        background: #fff
+    }
+
+    .site-header,
+    .site-footer,
+    .nav-list,
+    .hero {
+        display: none
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0
+    }
+
+    .table-wrap {
+        overflow: visible
+    }
+
+    .odds-table thead th {
+        background: #eee !important
+    }
+
+    a:after {
+        content: ''
+    }
+}
+
+/* betting hero image */
+.betting-hero {
+    padding: 0.8rem 0
+}
+
+.betting-hero .responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    border: 1px solid #eee
+}
+
+/* generic responsive image utility */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #eee
+}
+
+/* medium image variant for centered display */
+.img-medium {
+    max-width: 680px;
+    width: 90%;
+    margin: 0.6rem auto;
+    box-shadow: 0 6px 18px rgba(16, 24, 32, 0.06)
+}
+
+.center-figure {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0
+}
+
+.center-figure figcaption {
+    margin-top: 0.4rem;
+    text-align: center
+}
